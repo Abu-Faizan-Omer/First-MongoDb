@@ -3,12 +3,13 @@ const getDb=require("../util/database").getDb
 
 class Product{
 
-  constructor(tittle,price,description,imageUrl,id){
+  constructor(tittle,price,description,imageUrl,id,userId){
     this.tittle=tittle;
     this.price=price;
     this.description=description;
     this.imageUrl=imageUrl;
-    this._id= id ?  new mongodb.ObjectId(id) : null
+    this._id= id ?  new mongodb.ObjectId(id) : null;
+    this.userId = userId;
   }
   save(){
     const db= getDb()
